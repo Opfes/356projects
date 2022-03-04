@@ -5,7 +5,8 @@
 # Due Date: 3/4/2022
 # In keeping with the Honor Code of UM, I have neither given nor received inappropriate assistance
 # from anyone other than the TA or instructor.
-# Program Description: 
+# Program Description: The program is used to convert a standard math function to a postfix expression
+#the program can then perform the given postfix expression to find the answer to the expression
 
 #import stack file
 from Stack import Stack as Stack
