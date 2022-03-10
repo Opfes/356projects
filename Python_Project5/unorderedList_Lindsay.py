@@ -1,3 +1,13 @@
+# Course: CSCI 356, Section 1
+# Student Name: Drew Lindsay
+# Student ID: 10725791
+# Program 5
+# Due Date: 3/11/2022
+# In keeping with the Honor Code of UM, I have neither given nor received inappropriate assistance
+# from anyone other than the TA or instructor.
+# Program Description:This program implements a linked list that is unordered, can print based on a count that is a constructor,
+# and has an append method to allow values to be tacked on to the end of the list
+
 class UnorderedList:
     def __init__(self):
         self.head = None
@@ -30,10 +40,10 @@ class UnorderedList:
         current = self.head
         previous = None
         found = False
-        #I need to find where the actual node is removed and decrement self.length by 1 there
         while current != None and not found:
             if current.getData() == item:
                 found = True
+                self.length -= 1
             else:
                 previous = current
                 current = current.getNext()
@@ -51,14 +61,16 @@ class UnorderedList:
             while current.getNext() != None:
                 current = current.getNext()
             current.setNext(Node(item))
+            self.length +=1
         else:
             self.head = Node(item)
+            self.length +=1
     
     def printList(self):
         node = self.head
         while node:
-            print (node.value)
-        node = node.next
+            print (node.data, end=' ')
+            node = node.next
 
 class Node(object):
     def __init__(self,initdata):
