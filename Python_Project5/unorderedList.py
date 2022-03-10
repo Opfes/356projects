@@ -30,6 +30,7 @@ class UnorderedList:
         current = self.head
         previous = None
         found = False
+        #I need to find where the actual node is removed and decrement self.length by 1 there
         while current != None and not found:
             if current.getData() == item:
                 found = True
@@ -43,6 +44,7 @@ class UnorderedList:
         else:
             previous.setNext(current.getNext())
 
+    #This is O(n) and needs to be O(1)
     def append(self,item):
         current = self.head
         if current:
