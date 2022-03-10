@@ -43,3 +43,34 @@ class UnorderedList:
         else:
             previous.setNext(current.getNext())
 
+    def append(self,item):
+        current = self.head
+        if current:
+            while current.getNext() != None:
+                current = current.getNext()
+            current.setNext(Node(item))
+        else:
+            self.head = Node(item)
+    
+    def printList(self):
+        node = self.head
+        while node:
+            print (node.value)
+        node = node.next
+
+class Node(object):
+    def __init__(self,initdata):
+        self.data = initdata
+        self.next = None
+    
+    def getData(self):
+        return self.data
+
+    def getNext(self):
+        return self.next
+
+    def setData(self,newdata):
+        self.data = newdata
+    
+    def setNext(self,newnext):
+        self.next = newnext
