@@ -6,7 +6,8 @@
 # In keeping with the Honor Code of UM, I have neither given nor received inappropriate assistance
 # from anyone other than the TA or instructor.
 # Program Description:This program implements a linked list that is unordered, can print based on a count that is a constructor,
-# and has an append method to allow values to be tacked on to the end of the list
+# and has an append method to allow values to be tacked on to the end of the list with complexity of O(1). It can also tell if the list
+# is empty or if it has given value in it or not.
 
 #constructor for the unordered list class
 class UnorderedList:
