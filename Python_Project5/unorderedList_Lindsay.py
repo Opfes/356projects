@@ -11,6 +11,7 @@
 class UnorderedList:
     def __init__(self):
         self.head = None
+        self.tail = None
         self.length = 0
 
     def isEmpty(self):
@@ -21,6 +22,8 @@ class UnorderedList:
         temp.setNext(self.head)
         self.head = temp
         self.length += 1
+        if self.length == 1:
+            self.tail = temp
     
     def size(self):
         return self.length
@@ -55,7 +58,7 @@ class UnorderedList:
             previous.setNext(current.getNext())
 
     #This is O(n) and needs to be O(1)
-    def append(self,item):
+    def oldappend(self,item):
         current = self.head
         if current:
             while current.getNext() != None:
@@ -64,6 +67,19 @@ class UnorderedList:
             self.length +=1
         else:
             self.head = Node(item)
+            self.tail = Node(item)
+            self.length +=1
+    
+    def append(self,item):
+        current = self.tail
+        new = Node(item)
+        if current:
+            current.setNext(Node(item))
+            self.length +=1
+            self.tail = current.getNext()
+        else:
+            self.head = Node(item)
+            self.tail = Node(item)
             self.length +=1
     
     def printList(self):
